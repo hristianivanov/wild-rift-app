@@ -1,5 +1,7 @@
 @WildRiftCounterLab.Api_HostAddress = http://localhost:5069
 
+###
+
 POST {{WildRiftCounterLab.Api_HostAddress}}/api/draft/recommendations
 Content-Type: application/json
 
@@ -8,3 +10,7 @@ Content-Type: application/json
   "laneEnemy": "Darius",
   "enemyTeam": ["Senna", "Jhin", "Olaf"]
 }
+
+###
+
+GET {{WildRiftCounterLab.Api_HostAddress}}/api/champions
