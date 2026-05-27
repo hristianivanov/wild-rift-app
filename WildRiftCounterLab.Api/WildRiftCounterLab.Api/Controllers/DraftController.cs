@@ -24,10 +24,3 @@ public class DraftController : ControllerBase
         return Ok(result);
     }
 }
-
-public class DraftRequest
-{
-    public string Role { get; set; } = string.Empty;
-    public string LaneEnemy { get; set; } = string.Empty;
-    public List<string> EnemyTeam { get; set; } = new();
-}

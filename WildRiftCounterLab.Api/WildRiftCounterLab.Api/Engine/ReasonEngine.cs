@@ -1,6 +1,6 @@
-﻿using WildRiftCounterLab.Api.DTOs;
+﻿namespace WildRiftCounterLab.Api.Engine;
 
-namespace WildRiftCounterLab.Api.Engine;
+using DTOs;
 
 public class ReasonEngine
 {

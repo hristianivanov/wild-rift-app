@@ -2,7 +2,6 @@
 
 using DTOs;
 
-
 public class ScoreEngine
 {
     public int CalculateScore(string champion, DraftRequestDto request)

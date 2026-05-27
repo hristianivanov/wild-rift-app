@@ -1,13 +1,10 @@
 namespace WildRiftCounterLab.Api;
 
 using Data;
-
 using Engine;
-
-using Microsoft.EntityFrameworkCore;
-
 using Services;
 
+using Microsoft.EntityFrameworkCore;
 
 public class Program
 {
@@ -39,8 +36,8 @@ public class Program
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            //app.UseSwagger();
+            //app.UseSwaggerUI();
         }
 
         app.UseHttpsRedirection();
