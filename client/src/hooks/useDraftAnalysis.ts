@@ -49,7 +49,7 @@ export function useDraftAnalysis() {
       async function explainRecommendation(
         recommendation: DraftRecommendationResponse['recommendations'][number],
       ) {
-        let explanation = 'AI explanation unavailable.'
+        let explanation: string | null = null
 
         try {
           const response = await getAiExplanation({
@@ -62,15 +62,12 @@ export function useDraftAnalysis() {
             plan: recommendation.plan,
           })
 
-          explanation = response.explanation.includes('provider rate limit')
-            ? AI_RATE_LIMIT_MESSAGE
-            : response.explanation || explanation
-        } catch (aiError) {
-          if (isAiRateLimitError(aiError)) {
-            explanation = AI_RATE_LIMIT_MESSAGE
-          }
-
-          // Keep the card-level fallback and continue generating the remaining explanations.
+          explanation =
+            response.explanation && !response.explanation.includes('provider rate limit')
+              ? response.explanation
+              : null
+        } catch {
+          // AI unavailable — hide the section silently
         }
 
         if (
