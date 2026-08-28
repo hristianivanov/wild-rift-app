@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 import { getAiExplanation } from '../api/aiApi'
-import { AI_RATE_LIMIT_MESSAGE, getApiErrorMessage, isAiRateLimitError } from '../api/api'
+import { getApiErrorMessage } from '../api/api'
 import { getDraftRecommendations } from '../api/draftApi'
 import type {
   DraftRecommendationRequest,
